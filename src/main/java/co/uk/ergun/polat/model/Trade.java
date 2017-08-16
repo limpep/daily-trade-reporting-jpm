@@ -7,15 +7,15 @@ import java.time.LocalDate;
 /**
  * Created on 16/08/2017.
  */
-public class Item implements Comparable<Item> {
+public class Trade implements Comparable<Trade> {
 
   private String entity;
 
-  private ActionType actionType;
+  private TradeType tradeType;
 
   private BigDecimal agreedFx;
 
-  private String currency;
+  private Currency currency;
 
   private LocalDate instructionDate;
 
@@ -25,19 +25,18 @@ public class Item implements Comparable<Item> {
 
   private BigDecimal pricePerUnit;
 
-  public Item() {
+  public Trade() {
   }
 
-  public Item(String entity, ActionType actionType, BigDecimal agreedFx, String currency,
-      LocalDate instructionDate, LocalDate settlementDate, Long units, BigDecimal pricePerUnit) {
-    this.entity = entity;
-    this.actionType = actionType;
-    this.agreedFx = agreedFx;
-    this.currency = currency;
-    this.instructionDate = instructionDate;
-    this.settlementDate = settlementDate;
-    this.units = units;
-    this.pricePerUnit = pricePerUnit;
+  public Trade(Trade trade) {
+    this.entity = trade.entity;
+    this.tradeType = trade.tradeType;
+    this.agreedFx = trade.agreedFx;
+    this.currency = trade.currency;
+    this.instructionDate = trade.instructionDate;
+    this.settlementDate = trade.settlementDate;
+    this.units = trade.units;
+    this.pricePerUnit = trade.pricePerUnit;
   }
 
   public String getEntity() {
@@ -48,12 +47,12 @@ public class Item implements Comparable<Item> {
     this.entity = entity;
   }
 
-  public ActionType getActionType() {
-    return actionType;
+  public TradeType getTradeType() {
+    return tradeType;
   }
 
-  public void setActionType(ActionType actionType) {
-    this.actionType = actionType;
+  public void setTradeType(TradeType tradeType) {
+    this.tradeType = tradeType;
   }
 
   public BigDecimal getAgreedFx() {
@@ -64,11 +63,11 @@ public class Item implements Comparable<Item> {
     this.agreedFx = agreedFx;
   }
 
-  public String getCurrency() {
+  public Currency getCurrency() {
     return currency;
   }
 
-  public void setCurrency(String currency) {
+  public void setCurrency(Currency currency) {
     this.currency = currency;
   }
 
@@ -105,13 +104,13 @@ public class Item implements Comparable<Item> {
   }
 
   @Override
-  public int compareTo(Item o) {
+  public int compareTo(Trade o) {
     return o.currencyUSDAmount().compareTo(this.currencyUSDAmount());
   }
 
   @Override
   public String toString() {
-    return "Item{" +
+    return "Trade{" +
         "entity='" + entity + '\'' +
         "entity='" + entity + '\'' +
         '}';
@@ -131,9 +130,9 @@ public class Item implements Comparable<Item> {
       return false;
     }
 
-    Item item = (Item) o;
+    Trade trade = (Trade) o;
 
-    return entity != null ? entity.equals(item.entity) : item.entity == null;
+    return entity != null ? entity.equals(trade.entity) : trade.entity == null;
   }
 
   @Override
