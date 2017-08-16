@@ -1,4 +1,4 @@
-##J.P Morgan Daily trading platform
+###J.P Morgan Daily trading platform
 ### By Ergun Polat
 
 #### Tech stack
