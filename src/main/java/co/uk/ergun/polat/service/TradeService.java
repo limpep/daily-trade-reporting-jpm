@@ -1,5 +1,6 @@
 package co.uk.ergun.polat.service;
 
+import co.uk.ergun.polat.model.Trade;
 import java.util.List;
 
 /**
@@ -7,6 +8,6 @@ import java.util.List;
  */
 public interface TradeService {
 
-  List<TradeService> getTades();
+  List<Trade> getTades();
 
 }
