@@ -13,4 +13,6 @@ Make sure you have Java 1.8 or > installed
 Then just run 
 ```gradle run```
 
+To run the tests ```gradle test```
+
 Tested on Window 10 x64 

@@ -112,7 +112,7 @@ public class Trade implements Comparable<Trade> {
   public String toString() {
     return "Trade{" +
         "entity='" + entity + '\'' +
-        "entity='" + entity + '\'' +
+        "amount='" + this.currencyUSDAmount() + '\'' +
         '}';
   }
 
